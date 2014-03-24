@@ -1,14 +1,14 @@
-<h1>Listing projects</h1>
+<h1>プロジェクト一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Goal price</th>
-      <th>Start date</th>
-      <th>Limit date</th>
-      <th>Now price</th>
+      <th>プロジェクト</th>
+      <th>詳細</th>
+      <th>目標金額</th>
+      <th>開始日</th>
+      <th>期日</th>
+      <th>現在の価格</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,14 +18,13 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.title %></td>
+        <td><%= link_to project.title, project %></td>
         <td><%= project.description %></td>
         <td><%= project.goal_price %></td>
         <td><%= project.start_date %></td>
         <td><%= project.limit_date %></td>
         <td><%= project.now_price %></td>
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -34,4 +33,10 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to '新規プロジェクトを作成', new_project_path %>
+
+<% if user_signed_in? %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "ログイン", new_user_session_path %>
+<% end %>
