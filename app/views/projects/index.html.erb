@@ -38,7 +38,7 @@
 <%= link_to '新規プロジェクトを作成', new_project_path %>
 
 <% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :get %>
 <% else %>
 <%= link_to "ログイン", new_user_session_path %>
 <% end %>
