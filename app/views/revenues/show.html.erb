@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @revenue.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @revenue.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @revenue.price %>
+</p>
+
+<p>
+  <strong>Originality:</strong>
+  <%= @revenue.originality %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @revenue.confirmed %>
+</p>
+
+<%= link_to 'Edit', edit_revenue_path(@revenue) %> |
+<%= link_to 'Back', revenues_path %>
