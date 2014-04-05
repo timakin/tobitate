@@ -41,7 +41,7 @@ end
   gem 'dropzonejs-rails'
 
 group :development do
-  gem "rails-erd"
+  gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
   gem 'binding_of_caller'
   gem 'sextant'
   gem 'quiet_assets'
@@ -80,6 +80,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'paper_trail'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
