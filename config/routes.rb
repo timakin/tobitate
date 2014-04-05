@@ -1,7 +1,15 @@
 Tobitate::Application.routes.draw do
+
   devise_for :users
   resources :projects do
     resources :revenues
+    
+    resources :backups, :only => [:destroy] do
+      collection do
+        get :select 
+        get :regist
+      end 
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
