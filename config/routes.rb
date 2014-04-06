@@ -2,6 +2,7 @@ Tobitate::Application.routes.draw do
 
   devise_for :users
   resources :projects do
+    resources :activities
     resources :revenues
     
     resources :backups, :only => [:destroy] do
