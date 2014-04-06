@@ -71,6 +71,7 @@ gem 'reditor'
 gem 'friendly_id'
 gem 'foreigner'
 gem 'redcarpet'
+gem 'disqus'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

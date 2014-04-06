@@ -34,3 +34,11 @@
 <%= link_to 'Back', projects_path %> |
 <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to '報酬', project_revenues_path(@project) %>
+
+<br>
+<br>
+
+
+<div id="disqus_thread" style="width:500px;">
+  <%= raw disqus_thread %>
+</div>

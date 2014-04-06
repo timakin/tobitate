@@ -88,6 +88,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    disqus (1.0.4)
+      json
     dropzonejs-rails (0.4.14)
       rails (> 3.1)
     ejs (1.0.0)
@@ -278,6 +280,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  disqus
   dropzonejs-rails
   flat-ui-rails
   font-awesome-rails
