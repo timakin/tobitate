@@ -22,9 +22,9 @@
         <td><%= revenue.price %></td>
         <td><%= revenue.originality %></td>
         <td><%= revenue.confirmed %></td>
-        <td><%= link_to 'Show', revenue %></td>
-        <td><%= link_to 'Edit', edit_project_revenue_path(revenue) %></td>
-        <td><%= link_to 'Destroy', revenue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_revenue_path(revenue.project, revenue) %></td>
+        <td><%= link_to 'Edit', edit_project_revenue_path(revenue.project, revenue) %></td>
+        <td><%= link_to 'Destroy', project_revenue_path(revenue.project, revenue), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

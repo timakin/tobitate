@@ -16,9 +16,9 @@
       <tr>
         <td><%= activity.title %></td>
         <td><%= activity.description %></td>
-        <td><%= link_to 'Show', project_activity %></td>
-        <td><%= link_to 'Edit', edit_project_activity_path(activity.project,  activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_activity_path(activity.project, activity) %></td>
+        <td><%= link_to 'Edit', edit_project_activity_path(activity.project, activity) %></td>
+        <td><%= link_to 'Destroy', project_activity_path(activity.project, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

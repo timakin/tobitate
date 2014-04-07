@@ -25,5 +25,5 @@
   <%= @revenue.confirmed %>
 </p>
 
-<%= link_to 'Edit', edit_revenue_path(@revenue) %> |
-<%= link_to 'Back', revenues_path %>
+<%= link_to 'Edit', edit_project_revenue_path(@project, @revenue) %> |
+<%= link_to 'Back', project_revenues_path(@project) %>

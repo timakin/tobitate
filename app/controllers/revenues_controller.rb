@@ -4,32 +4,38 @@ class RevenuesController < ApplicationController
   # GET /revenues
   # GET /revenues.json
   def index
-    @project = Project.find(params[:user_id])
+    @project = Project.find(params[:project_id])
     @revenues = @project.revenues.all
   end
 
   # GET /revenues/1
   # GET /revenues/1.json
   def show
+    @project = Project.find(params[:project_id])
+    @revenues = @project.revenues.find(params[:id])
   end
 
   # GET /revenues/new
   def new
-    @revenue = Revenue.new
+    @project = Project.find(params[:project_id])
+    @revenue = @project.revenues.build
   end
 
   # GET /revenues/1/edit
   def edit
+    @project = Project.find(params[:project_id])
+    @revenue = @project.revenues.find(params[:id])    
   end
 
   # POST /revenues
   # POST /revenues.json
   def create
-    @revenue = Revenue.new(revenue_params)
+    @project = Project.find(params[:project_id])    
+    @revenue = @project.revenues.build(revenue_params)
 
     respond_to do |format|
       if @revenue.save
-        format.html { redirect_to @revenue, notice: 'Revenue was successfully created.' }
+        format.html { redirect_to [@project, @revenue], notice: 'Revenue was successfully created.' }
         format.json { render action: 'show', status: :created, location: @revenue }
       else
         format.html { render action: 'new' }
@@ -43,7 +49,7 @@ class RevenuesController < ApplicationController
   def update
     respond_to do |format|
       if @revenue.update(revenue_params)
-        format.html { redirect_to @revenue, notice: 'Revenue was successfully updated.' }
+        format.html { redirect_to [@project, @revenue], notice: 'Revenue was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -57,7 +63,7 @@ class RevenuesController < ApplicationController
   def destroy
     @revenue.destroy
     respond_to do |format|
-      format.html { redirect_to revenues_url }
+      format.html { redirect_to project_revenues_url }
       format.json { head :no_content }
     end
   end
