@@ -4,7 +4,8 @@ class RevenuesController < ApplicationController
   # GET /revenues
   # GET /revenues.json
   def index
-    @revenues = Revenue.all
+    @project = Project.find(params[:user_id])
+    @revenues = @project.revenues.all
   end
 
   # GET /revenues/1
