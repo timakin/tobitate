@@ -14,6 +14,9 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails", git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,11 +29,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :assets do
   # Bootstrap
-  gem 'bootstrap-sass', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
-  gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'  
+  gem 'bootstrap-sass', '~> 3.0.3.0'
   gem "flat-ui-rails"
   # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.3.0'
   gem "font-awesome-rails"
 end
   # Use jquery as the JavaScript library
