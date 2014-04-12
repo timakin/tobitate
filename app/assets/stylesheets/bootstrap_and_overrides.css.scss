@@ -1,0 +1,98 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.navbar-nav-custom{
+	margin-left: 30px;
+	padding-right: 20px;
+	border-right: 1px solid #d0d5cb;
+}
+
+.navbar-default{
+	margin-bottom: 0px;
+	background-color: white;	
+}
+
+.navbar-brand{
+	height: 70px;
+	line-height: 70px;
+	padding-top: 0px;
+	font-weight: bold;
+}
+
+.navbar-custom {
+	margin-bottom: 0px;
+	border: none;
+	background-color: white;
+	color: white;
+	border-radius: 0px;
+
+	li{
+		a{
+			height: 70px;
+			line-height: 70px;
+			padding-top: 0px;
+		}
+	}
+	
+	li:hover{
+		display: inline-block;
+		box-shadow: 0 3px #ea585d inset;
+	}
+	
+	a{
+		height: 70px;
+		line-height: 70px;
+		padding-top: 0px;
+		color: white;
+		font-weight: bold;
+	}
+	.navbar-form{
+		margin-top: 18px;
+		.form-control{
+			border: none;
+			box-shadow: none;
+			font-weight: bold;
+		}
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	.nav{
+		li > a{
+			padding: none;
+		}
+	}
+	.navbar-nav-custom{
+		margin-left: 0px;
+		padding: none;
+		li:hover{
+				box-shadow: none;
+		}
+		border: none;
+	}
+	.navbar-nav-custom2{
+		margin-left: 0px;
+	}	
+	.navbar-custom{
+		li:hover{
+				box-shadow: none;
+		}
+	}
+	.navbar-toggle{
+		margin-top: 17px;
+	}
+}
+
+.jumbotron{
+	color: white;
+	text-align: center;
+	height: 480px;
+	background-size: cover;
+/*	background-image: url(/assets/images/slide-overview.jpg); */
+}

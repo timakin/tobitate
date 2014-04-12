@@ -1,3 +1,107 @@
+<div class="jumbotron" style="background-image:url(<%= asset_path "slide-overview.jpg" %>)">
+    <div class="container">
+      <br><br>
+      <h1>Go ahead with power of crowd</h1></br></br>
+      <p><a class="btn btn-custom btn-lg" role="button">Learn more</a></p>    
+    </div>
+  </div>
+
+   <div class="container">
+     <div class="row">
+       <div class="col-md-4" style="background:black;">
+         てすと
+       </div>
+       <div class="col-md-8" style="background:blue;">
+         てすつ
+       </div>
+     </div>
+   </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        tetetetetetetetetee
+      </div>
+
+      <div class="col-md-9">
+        <div class="col-md-4">
+          test
+        </div>
+        <div class="col-md-4">
+          test
+        </div>
+        <div class="col-md-4">
+          test
+        </div>
+        <div class="col-md-4">
+          test
+        </div>
+        <div class="col-md-4">
+          test
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <div class="container"> 
+     <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img data-src="holder.js/300x200" alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <ul>
+          <li>test1</li>
+          <li>test2</li>
+          <li>test3</li>
+        </ul>
+      </div>
+    </div>
+   </div>
+
+
+
+   <div class="container-3rd">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         test<br>test<br>test<br>test<br>test<br>
+       </div>
+     </div>
+   </div>
+   </div>
+   <br><br><br>
+
 <h1>プロジェクト一覧</h1>
 
 <table>
@@ -36,9 +140,3 @@
 <br>
 
 <%= link_to '新規プロジェクトを作成', new_project_path %>
-
-<% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :get %>
-<% else %>
-<%= link_to "ログイン", new_user_session_path %>
-<% end %>

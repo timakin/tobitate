@@ -9,92 +9,88 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-	<nav class="navbar navbar-default" role="navigation">
-    <div class="container container-fluid">
-     <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>  
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
+<nav class="navbar navbar-default navbar-custom" role="navigation">
+  <div class="container container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">T O B I T A T E</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-nav-custom">
+        <li><%= link_to "Discover", projects_path %></li>
+        <li><%= link_to "Start", new_project_path, :style => 'color:#ea585d;' %></li>
+<!--        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>-->
+        </li>
+      </ul>
+      <div class="nav-search">
         <form class="navbar-form navbar-left" role="search">
+
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search Projects">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+        </form>      
+      </div>
+      <ul class="nav navbar-nav navbar-right navbar-nav-custom2">
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :get %>
+          <% else %>
+            <%= link_to "Sign in", "#myModal", :data => {:toggle => "modal"} %>
+          <% end %>
+        </li>
 
+<!--    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
 
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <%= bootstrap_flash %>
-            <%= yield %>
-          </div>
-          <div class="col-lg-4">
-             <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-     </div>
-     <div class="container">
-     	<div class="row">
-  <div class="col-xs-6 col-sm-4 col-md-2">あ</div>
-  <div class="col-xs-6 col-sm-4 col-md-2">い</div>
-  <div class="col-xs-6 col-sm-4 col-md-2">う</div>
-  <div class="col-xs-6 col-sm-4 col-md-2">え</div>
-  <div class="col-xs-6 col-sm-4 col-md-2">お</div>
-  <div class="col-xs-6 col-sm-4 col-md-2">か</div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </div>
-     </div>
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
-    </div> <!-- /container -->
+  
+  <%= yield %>
 
   </body>
 </html>
