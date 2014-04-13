@@ -25,5 +25,10 @@ module Tobitate
       Disqus::defaults[:container_id] = "disqus_thread"
       Disqus::defaults[:show_powered_by] = false        
     end
+
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    # vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.* を precompile の対象に含める
+    config.assets.precompile += %w(*.eot *.svg *.ttf *.woff)
+
   end
 end
