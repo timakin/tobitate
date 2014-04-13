@@ -1,5 +1,6 @@
 Tobitate::Application.routes.draw do
 
+  get "welcome/index"
   devise_for :users
   resources :projects do
     resources :activities
@@ -17,7 +18,7 @@ Tobitate::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'projects#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
