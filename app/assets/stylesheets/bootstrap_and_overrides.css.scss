@@ -13,7 +13,7 @@
 }
 
 
-
+/* Navbar関係の設定 */
 .navbar-nav-custom{
 	margin-left: 30px;
 	padding-right: 20px;
@@ -75,6 +75,18 @@
 		font-size: medium;
 	}
 }
+
+/* rowの設定 */
+.centered-row{
+	text-align: center;
+}
+
+/* Modal関係の設定*/
+.modal-header{
+	color: white;
+	background-color: #ea585d;
+}
+
 .modal-content{
 	border-radius: 0px;
 }
@@ -111,6 +123,7 @@
 	color: white;
 	text-align: center;
 	height: 480px;
+	margin-bottom: 0px;
 	background-size: cover;
 /*	background-image: url(/assets/images/slide-overview.jpg); */
 }
