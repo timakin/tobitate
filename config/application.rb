@@ -27,6 +27,7 @@ module Tobitate
     end
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.* を precompile の対象に含める
     config.assets.precompile += %w(*.eot *.svg *.ttf *.woff)
 
