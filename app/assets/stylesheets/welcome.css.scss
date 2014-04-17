@@ -13,10 +13,6 @@ h1.copy{
 .aqua{
 	font-family: Aqua;
 }
-.h4-subtext{
-	color: #5e5e5e;
-}
-
 /* col関係の設定 */
 .centered-col{
 	text-align: center;	
@@ -30,6 +26,8 @@ h1.copy{
 /* container関係の設定 */
 .second_content{
 	padding-bottom: 30px;
+	background-color: #E74C3F;
+	color: white;
 }
 .third_content{
 	padding-top: 30px;
