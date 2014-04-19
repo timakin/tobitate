@@ -12,6 +12,9 @@
   src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
+.centering{
+	text-align: center;
+}
 
 
 /* Navbar関係の設定 */
@@ -92,7 +95,7 @@
 	border-radius: 0px;
 }
 
-
+/* スマートフォン用のnavbarの切りかえ */
 @media screen and (max-width: 767px) {
 	.nav{
 		li > a{
@@ -128,3 +131,4 @@
 	background-size: cover;
 /*	background-image: url(/assets/images/slide-overview.jpg); */
 }
+
