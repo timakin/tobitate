@@ -1,3 +1,25 @@
+<script>
+  $(function ()
+  {
+    $("#wizard").steps({
+      headerTag: "h2",
+      bodyTag: "section",
+      transitionEffect: "slideLeft"
+    });
+  });      
+
+  $(document).ready(function() {
+    $('#rootwizard').bootstrapWizard({
+        tabClass: 'nav nav-pills',
+        onNext: function(tab, navigation, index) {
+          console.log(tab);
+        }
+    });
+});
+    
+</script>
+  
+<div id="rootwizard">
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -10,32 +32,65 @@
       </ul>
     </div>
   <% end %>
+  <div class="navbar">
+    <div class="navbar-inner">
+		  <ul>
+		    <li><a href="#tab1" data-toggle="tab">First</a></li>
+		    <li><a href="#tab2" data-toggle="tab">Second</a></li>
+		    <li><a href="#tab3" data-toggle="tab">Third</a></li>
+		    <li><a href="#tab4" data-toggle="tab">Forth</a></li>
+ 		 </ul>
+    </div>
+  </div>
+  <div class="tab-content">
+      <div class="tab-pane" id="tab1">
+        <div class="field">
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :goal_price %><br>
-    <%= f.number_field :goal_price %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :limit_date %><br>
-    <%= f.date_select :limit_date %>
-  </div>
-  <div class="field">
-    <%= f.label :now_price %><br>
-    <%= f.number_field :now_price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <div class="field">
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </div>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_area :description %>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab2">
+          <div class="field">
+            <%= f.label :start_date %><br>
+            <%= f.date_select :start_date %>
+          </div>
+          <div class="field">
+            <%= f.label :limit_date %><br>
+            <%= f.date_select :limit_date %>
+          </div>
+      </div>
+      <div class="tab-pane" id="tab3">
+          <div class="field">
+            <%= f.label :goal_price %><br>
+            <%= f.number_field :goal_price %>
+          </div>        
+
+          <div class="field">
+            <%= f.label :now_price %><br>
+            <%= f.number_field :now_price %>
+          </div>
+      </div>
+      <div class="tab-pane" id="tab4">
+        4
+      </div>
+    <ul class="pager wizard">
+      <li class="previous first" style="display:none;"><a href="#">First</a></li>
+      <li class="previous"><a href="#">Previous</a></li>
+      <li class="next last" style="display:none;"><a href="#">Last</a></li>
+      <li class="next"><a href="#">Next</a></li>
+    </ul>
+      <div class="actions">
+          <%= f.submit %>
+      </div>
+    <% end %>
+  </div>  
+</div>

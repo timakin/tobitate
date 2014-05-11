@@ -52,6 +52,7 @@ group :development do
   gem 'better_errors'
 end
 
+gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
 gem 'mime-types'
 gem 'mini_magick'
@@ -95,7 +96,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

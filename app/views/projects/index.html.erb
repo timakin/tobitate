@@ -1,91 +1,37 @@
-<div class="jumbotron" style="background-image:url(<%= asset_path "slide-overview.jpg" %>)">
+<div class="jumbotron" style="background-image:url(<%= asset_url("slide-overview.jpg") %>)">
     <div class="container">
       <br><br>
-      <h1>Go ahead with power of crowd</h1></br></br>
-      <p><a class="btn btn-custom btn-lg" role="button">Learn more</a></p>    
-    </div>
-  </div>
-
-   <div class="container">
-     <div class="row">
-       <div class="col-md-4" style="background:black;">
-         てすと
-       </div>
-       <div class="col-md-8" style="background:blue;">
-         てすつ
-       </div>
+			<h1>Go ahead with power of crowd</h1></br></br>
+			<p>	
+  			<%=link_to 'Start Project', new_project_path, :class=>'btn btn-custom btn-lg' %>
+			</p>
      </div>
-   </div>
-  
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        tetetetetetetetetee
-      </div>
-
-      <div class="col-md-9">
-        <div class="col-md-4">
-          test
-        </div>
-        <div class="col-md-4">
-          test
-        </div>
-        <div class="col-md-4">
-          test
-        </div>
-        <div class="col-md-4">
-          test
-        </div>
-        <div class="col-md-4">
-          test
-        </div>
-      </div>
-    </div>
   </div>
 
 
+   
    <div class="container"> 
      <div class="row">
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <img data-src="holder.js/300x200" alt="...">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      <% @picked_projects.each do |p| %>
+        <div class="col-md-3">
+          <div class="thumbnail project_thumb">
+            <%= link_to image_tag(p.image_url(:thumb).to_s), p %>
+            <div class="caption">
+              <p><%= p.title %></p>
+              <p>by <%= p.user.email %></p>
+              <p><%= p.description %></p>
+              <ul>
+                <li>test</li>
+                <li>test</li>
+              </ul>
+              <ul>
+                <li>test</li>
+                <li>test</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-            <div class="col-md-3">
-        <div class="thumbnail">
-          <img data-src="holder.js/300x200" alt="...">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <img data-src="holder.js/300x200" alt="...">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>ああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <ul>
-          <li>test1</li>
-          <li>test2</li>
-          <li>test3</li>
-        </ul>
-      </div>
+      <% end %> 
     </div>
    </div>
 
@@ -107,16 +53,18 @@
 <table>
   <thead>
     <tr>
-      <th>プロジェクト</th>
-      <th>詳細</th>
-      <th>目標金額</th>
-      <th>開始日</th>
-      <th>期日</th>
-      <th>現在の価格</th>
-      <th>起案</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <div>
+        <th>プロジェクト</th>
+        <th>詳細</th>
+        <th>目標金額</th>
+        <th>開始日</th>
+        <th>期日</th>
+        <th>現在の価格</th>
+        <th>起案</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </div>
     </tr>
   </thead>
 

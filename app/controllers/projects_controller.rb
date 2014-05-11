@@ -3,10 +3,12 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
 
+
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    @picked_projects = Project.find(:all, :limit => 3, :order => 'created_at desc')
   end
 
   # GET /projects/1
@@ -72,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description, :goal_price, :start_date, :limit_date, :now_price)
+      params.require(:project).permit(:title, :description, :goal_price, :start_date, :limit_date, :now_price, :image)
     end
 end

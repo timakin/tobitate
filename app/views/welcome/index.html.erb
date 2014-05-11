@@ -1,4 +1,4 @@
-<div class="jumbotron" style="background-image:url(<%= asset_path "slide-overview.jpg" %>)">
+<div class="jumbotron" style="background-image:url(<%= asset_url("slide-overview.jpg") %>)">
     <div class="container">
       <br><br>
       <h1 class="adam">Go ahead with power of crowd</h1></br></br>
@@ -11,8 +11,9 @@
       <div class="row">
         <div class="col-md-4">
           <h1>Picked Up Project</h1>
+          <p><%= image_tag @picked_project.image_url(:thumb).to_s %></p>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 picked_description">
           <%= @picked_project.title %><br>
           <%= @picked_project.goal_price %><br>
           <%= @goal_percentage %><br>
